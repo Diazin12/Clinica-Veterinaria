@@ -1,0 +1,10 @@
+Nome: Rex | Especie: cachorro | Raca: Fox | Idade: 1 | Peso: 3 | Obs: Dourado
+Nome: Rasta | Especie: cachorro | Raca: Labrador | Idade: 5 | Peso: 11 | Obs: 
+Nome: Rasta | Especie: cachorro | Raca: Labrador | Idade: 5 | Peso: 11 | Obs: 
+Nome: Floco | Especie: gato | Raca: Vira-Lata | Idade: 2 | Peso: 4 | Obs: 
+Nome: Floco | Especie: gato | Raca: Vira-Lata | Idade: 2 | Peso: 4 | Obs: 
+Nome: Floco | Especie: gato | Raca: 5 | Idade: 1 | Peso: 35 | Obs: 
+Nome: Floco | Especie: cachorro | Raca: Vira-Lata | Idade: 5 | Peso: 12 | Obs: 
+Nome: Floquinho | Especie: gato | Raca: Vira-Lata | Idade: 7 | Peso: 5 | Obs: 
+Nome: Rasta | Especie: cachorro | Raca: Labrador | Idade: 2 | Peso: 3 | Obs: 
+Nome: Dolin | Especie: cachorro | Raca: Pincher | Idade: 3 | Peso: 7 | Obs: 
