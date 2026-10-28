@@ -1,0 +1,10 @@
+[
+    {
+        "nome": "Dias",
+        "email": "adm@gmail.com",
+        "telefone": "13996164456",
+        "endereco": "Casa",
+        "senha_hash": "$2y$10$4zEjzarozqdxGcRSQ\/RBs.2YqAB7ixlraLO5shI4I\/c7Z7xIck1Hq",
+        "criado_em": "2026-10-28T18:16:56+00:00"
+    }
+]

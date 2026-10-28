@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    isolation: isolate;
+    min-height: 100vh; /* O fundo ocupa pelo menos toda a altura da tela */
+    background-color: #eef6ff;
+    background-image: url("fundo_alterado.png");
+    background-size: cover; /* Preenche a página sem deformar a imagem */
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+.all {
+    background-color: #00489C;
+
+    display: flex; /* <= deixa os elementos flexivel */
+    align-items: center; /*<= alinha os elementos verticalmente no centro */
+
+    min-height: 104px;
+    box-sizing: border-box;
+    padding: 20px 42px; /* Espaço interno do cabeçalho ampliado */
+}
+
+.logo {
+    width: 196px;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 49px; /* Espaço entre os links */
+
+    margin-left: auto;
+}
+
+.button {
+    font-size: 22.4px;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ent {
+    font-size: 22.4px;
+    color: white;
+    background-color:#FF8C00;
+
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+
+    padding: 7px 14px;
+    border-radius: 4px;
+
+    margin-left: 42px;
+}
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadastro_pet p, h1{
+    text-align: center;
+}
+
+.cadastro_pet input{
+    padding: 5px;
+    width: 200px;
+    border-radius: 8px;
+    border: 2px solid darkgray
+}
+
+.cadastro_pet input.obs {
+    height: 100px;
+    width: 430px;
+}
+
+#especie{
+    width: 212.9px;
+    height: 29.2px;
+    border-radius: 8px;
+    border: 2px solid darkgray;
+}
+
+.cadastro_pet table {
+    border-spacing: 0;
+    margin-top: 16px; /* Espaço depois do Nome do Pet */
+}
+
+.cadastro_pet td {
+    padding: 0 0 16px;
+}
+
+.cadastro_pet td:first-child { /*<= espaço entre as cedulas TD*/
+    padding-right: 16px;
+    padding-right: 12px; /* Espaço entre as colunas */
+}
+
+.cadastro_pet input.pet{
+    width: 430px;
+
+
+}
+
+.cadastro_pet{
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: white;
+    border: 2px solid darkgray;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 80px; /* Afasta o cadastro do cabeçalho */
+}
+
+.cadastro_pet button {
+    display: block; /* <= Coloca o botão em uma linha própria */
+    margin: 16px auto 0; /* <= centraliza na horizontal com auto nas laterais e deixa 0 de espaço abaixo */
+    width: 444px;
+    padding: 9px;
+    cursor: pointer;
+    color: white;
+    background-color: #FF8C00;
+    border: none;
+    border-radius: 8px;
+}

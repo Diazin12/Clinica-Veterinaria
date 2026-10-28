@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pet.css">
+</head>
+<body>
+    <header class="cabecalho">
+
+        <div class="all">
+
+            <!-- Logo clicavel, direciona ao site oficial-->
+            <a href="https://www.unifio.edu.br/home/">
+                <img class="logo"
+                src="logo_vet.png"
+                alt="Logo Unifio">
+            </a>    
+
+            <!-- Menu superior -->
+            <nav class="menu">
+
+                <a href="../INICIO/tela_inicial.html" class="button">
+                    Inicio
+                </a>
+
+                <a href="#" class="button">
+                    Serviços
+                </a>
+
+                <a href="../AGENDAMENTO/agendamento.html" class="button">
+                    Agendamentos
+                </a>
+
+            </nav>
+
+        </div>
+
+        <div class = "container">
+
+            <div class="cadastro_pet">
+
+                <h1>🐾</h1>
+                <h1> Cadastro do Pet </h1>
+                <p> Adicione as informação do seu pet. </p>
+
+            <form action="../cadastro_pet.php" method="POST">
+                <label for = "pet"> Nome do Pet </label> <br>
+                <input type = "text" id = "pet" class = "pet" name = "pet" placeholder="Nome do seu Pet" required>
+                
+                <table>
+
+                    <!-- Especie e raça -->
+                    <tr>
+
+                        <td>
+
+                        <label for = "especie"> Especie </label> <br>
+                            <select id = "especie" name = "especie" type = "tel" placeholder = "Selecione" required>
+                                <option value = "" disabled selected> Selecione </option>
+                                <option value = "cachorro"> Cachorro </option>
+                                <option value = "gato"> Gato </option>
+                                <option value = "outro"> Outro </option>
+                            </select>
+
+                        </td>
+                    
+
+                        <td>
+                            <label for = "raca"> Raça </label> <br>
+                            <input type = "text" id = "raca" name = "raca" placeholder="Ex: Pincher, Labrador, etc." required>
+                        </td>
+
+                    </tr>
+
+                    <!--Idade e peso-->
+                    <tr>
+
+                        <td>
+                            <label for = "idade"> Idade </label> <br>
+                            <input type = "text" id = "idade" name = "idade" placeholder="Ex: 2 anos." required>
+                        </td>
+
+
+                        <td>
+                            <label for = "peso"> Peso </label> <br>
+                            <input type = "text" id = "peso" name = "peso" placeholder="Ex: 12.6" required>
+                        </td>
+
+                    </tr>
+
+                </table>
+
+                <!--Observação-->
+                <label for = "obs" > Observação </label> <br>
+                <input type = "text" id = "obs" class = "obs" name = "obs" placeholder = "Informações adicionais (opcional).">
+
+                <!-- Confirmar cadastro do pet-->
+                <button> Cadastrar Pet </button>
+
+                </form>
+
+            </div>
+
+        </div>
+    </header>
+</body>
+</html>

@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    isolation: isolate;
+
+}
+
+.all {
+    background-color: #00489C;
+
+    display: flex; /* <= deixa os elementos flexivel */
+    align-items: center; /*<= alinha os elementos verticalmente no centro */
+
+    min-height: 104px;
+    box-sizing: border-box;
+    padding: 20px 42px; /* Espaço interno do cabeçalho ampliado */
+}
+
+.logo {
+    width: 196px;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 49px; /* Espaço entre os links */
+
+    margin-left: auto;
+}
+
+.button {
+    font-size: 22.4px;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ent {
+    font-size: 22.4px;
+    color: white;
+    background-color:#FF8C00;
+
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+
+    padding: 7px 14px;
+    border-radius: 4px;
+
+    margin-left: 42px;
+}
+
+.animais {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right bottom;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.info{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    margin: 87px 46px 0; /* Posição do texto na segunda imagem */
+}
+
+.info button{
+    border-radius: 14px;
+    font-size: 18.67px;
+    line-height: 1.2;
+    background-color: #FF8C00;
+    color: white;
+    text-decoration: none;
+    border: none; /* <= retira a borda preta do botão */
+    padding: 11.2px 28px;
+    cursor: pointer;
+}
+
+.info h1{
+    color:#00489C;
+    font-size: 44.8px; /* Título 40% maior */
+    line-height: 1.3;
+    margin: 0 0 14px;
+}
+
+.info p{
+    font-size: 22.4px;
+    line-height: 1.4;
+    margin: 0 0 22.4px;
+}
+
+.servicos {
+    display: flex; /* Coloca os cartões lado a lado */
+    gap: 28px; /* Espaço entre os cartões */
+    max-width: 1344px; /* Largura 40% maior, como na referência */
+    margin: 112px 46px 42px; /* Espaço acima, nas laterais e abaixo */
+    font-family: Arial, sans-serif; /* Fonte dos textos */
+   
+}
+
+.servicos .card {
+    flex: 1; /* Distribui igualmente o espaço entre os cartões */
+    min-width: 0; /* Permite que os cartões encolham */
+    min-height: 308px; /* Altura proporcional à segunda imagem */
+    box-sizing: border-box; /* Inclui padding e borda no tamanho */
+
+    display: flex; /* Ativa a organização flexível dentro do cartão */
+    flex-direction: column; /* Coloca ícone, título e texto um abaixo do outro */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+    justify-content: center; /* Centraliza o conjunto verticalmente */
+
+    background-color: white; /* Cor de fundo do cartão */
+    border-radius: 22px; /* Arredonda os cantos */
+    padding: 39.2px 28px; /* Espaço interno: vertical e horizontal */
+    text-align: center; /* Centraliza o texto */
+    border: 2px solid #00489C;
+}
+
+.servicos .ic {
+    width: 78.4px;
+    height: 78.4px;
+    margin-bottom: 25.2px; /* Espaço abaixo do ícone */
+    color: #00489C;
+}
+
+.servicos .ic svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.servicos h2 {
+    font-size: 33.6px; /* Tamanho do título */
+    line-height: 1.2; /* Altura da linha: 1,2 vez o tamanho da fonte */
+    margin: 0 0 11.2px; /* Espaço abaixo do título */
+}
+
+.servicos p {
+    font-size: 25.2px; /* Tamanho da descrição */
+    line-height: 1.4; /* Altura da linha: 1,4 vez o tamanho da fonte */
+    margin: 0; /* Remove as margens padrão do parágrafo */
+}
+
+
+/* IA */
+@media (max-width: 1050px) {
+    .all {
+        flex-wrap: wrap;
+        gap: 16px;
+        padding: 16px 24px;
+    }
+
+    .logo { width: 140px; }
+    .menu { gap: 20px; }
+    .button, .ent { font-size: 16px; }
+    .ent { margin-left: 0; }
+    .info { margin: 60px 24px 0; }
+    .servicos { margin: 64px 24px 30px; gap: 16px; }
+    .servicos .card { padding: 28px 16px; }
+    .servicos h2 { font-size: 26px; }
+    .servicos p { font-size: 20px; }
+}
+
+@media (max-width: 700px) {
+    .menu {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ent { margin-left: auto; }
+    .info h1 { font-size: 32px; }
+    .info p { font-size: 18px; }
+
+    .servicos {
+        flex-direction: column; /* Empilha os cartões no celular */
+        max-width: 440px;
+        margin-top: 48px;
+    }
+
+    .servicos .card { min-height: 260px; }
+}
+
+.info .agendar-link{display:inline-block;border-radius:14px;font-size:18.67px;line-height:1.2;background:#ff8c00;color:white;text-decoration:none;padding:11.2px 28px}
+
+main {
+    padding: 24px 42px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.rodape {
+    background-color: #00489C;
+    color: white;
+    text-align: center;
+    padding: 24px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo-rodape {
+    width: 220px;
+    height: auto;
+}

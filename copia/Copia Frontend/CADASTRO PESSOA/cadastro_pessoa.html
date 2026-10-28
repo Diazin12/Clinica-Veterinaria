@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro</title>
+    <link rel="stylesheet" href="cad.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+<header class="cabecalho">
+
+        <div class="all">
+
+            <!-- Logo clicavel, direciona ao site oficial-->
+            <a href="https://www.unifio.edu.br/home/">
+                <img class="logo"
+                src="logo_vet.png"
+                alt="Logo Unifio">
+            </a>    
+
+            <!-- Menu superior -->
+            <nav class="menu">
+
+                <a href="../INICIO/tela_inicial.html" class="button">
+                    Inicio
+                </a>
+
+                <a href="#" class="button">
+                    Serviços
+                </a>
+
+                <a href="../AGENDAMENTO/agendamento.html" class="button">
+                    Agendamentos
+                </a>
+
+            </nav>
+
+        </div>
+
+        <!-- Conteiner para posicionar a div -->
+        <div class = "container">
+
+            <!-- Div com os INPUTS-->
+            <div class = "cadastro">
+
+                <h1> Cadastro do Tutor </h1>
+                <p>Preencha seus dados para continuar.</p>
+
+                <form action="cadastrar.php" method="post">
+                    <label for="nome">Nome completo</label> <br>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required maxlength="100" autocomplete="name">
+                    <br><br>
+
+                    <label for="email">E-mail</label> <br>
+                    <input type="email" id="email" name="email" placeholder="seuemail@gmail.com" required maxlength="150" autocomplete="email">
+                    <br><br>
+
+                    <label for="telefone">Telefone</label> <br>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(14)99999-9999" required maxlength="20" autocomplete="tel">
+                    <br><br>
+
+                    <label for="endereco">Endereço</label> <br>
+                    <input type="text" id="endereco" name="endereco" placeholder="Rua, número, bairro" maxlength="200" autocomplete="street-address">
+                    <br><br>
+
+                    <label for="senha" class="label">Senha</label> <br>
+                    <input type="password" id="senha" name="senha" placeholder="Digite uma senha" required minlength="6" autocomplete="new-password">
+                    <br><br>
+
+                    <button type="submit" class="confirmar">Cadastrar</button>
+
+                </form>
+
+                <p class="login">
+                    Já tem uma conta? <a href="#">Entrar</a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </header>
+</body>
+</html>
