@@ -1,9 +1,20 @@
+<?php
+if (session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
+
+$tituloPagina = $tituloPagina ?? 'Clínica Veterinária';
+$cssPagina = $cssPagina ?? 'INICIO/tela_ini.css';
+$paginaAtual = $paginaAtual ?? '';
+$prefixoRaiz = $prefixoRaiz ?? '';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel do Atendente</title>
+    <title><?= htmlspecialchars($tituloPagina, ENT_QUOTES, 'UTF-8') ?></title>
+    <link rel="stylesheet" href="<?= htmlspecialchars($cssPagina, ENT_QUOTES, 'UTF-8') ?>">
 </head>
 <body>
 
@@ -11,36 +22,35 @@
 
         <div class="all">
 
-            <!-- Logo clicavel, direciona ao site oficial -->
             <a href="https://www.unifio.edu.br/home/">
                 <img class="logo"
-                src="logo_vet.png"
+                src="<?= htmlspecialchars($prefixoRaiz, ENT_QUOTES, 'UTF-8') ?>INICIO/logo_vet.png"
                 alt="Logo Unifio">
             </a>
 
-            <!-- Menu superior -->
             <nav class="menu">
 
-                <a href="tela_inicial.html" class="button">
+                <a href="<?= htmlspecialchars($prefixoRaiz, ENT_QUOTES, 'UTF-8') ?>INICIO/tela_inicial.html" class="button">
                     Inicio
                 </a>
 
-                <a href="#" class="button">
+                <a href="<?= htmlspecialchars($prefixoRaiz, ENT_QUOTES, 'UTF-8') ?>INICIO/tela_inicial.html#servicos" class="button">
                     Serviços
                 </a>
 
-                <a href="../AGENDAMENTO/agendamento.html" class="button">
+                <a href="<?= htmlspecialchars($prefixoRaiz, ENT_QUOTES, 'UTF-8') ?>AGENDAMENTO/agendamento.php" class="button">
                     Agendamentos
                 </a>
 
-                <!-- Pagina atual (destaque em laranja) -->
-                <a href="painel.php" class="button painel-ativo">
+                <a href="<?= htmlspecialchars($prefixoRaiz, ENT_QUOTES, 'UTF-8') ?>PAINEL/painel.php" class="button <?= $paginaAtual === 'painel' ? 'painel-ativo' : '' ?>">
                     Painel
                 </a>
 
-                <a href="#" class="button">
-                    Sair
-                </a>
+                <?php if ($paginaAtual === 'painel'): ?>
+                    <a href="<?= htmlspecialchars($prefixoRaiz, ENT_QUOTES, 'UTF-8') ?>INICIO/tela_inicial.html" class="ent">
+                        Sair
+                    </a>
+                <?php endif; ?>
 
             </nav>
 
@@ -49,20 +59,3 @@
     </header>
 
     <main>
-    </main>
-
-    <footer class="rodape">
-
-        <!-- Logo do rodape -->
-        <a href="https://www.unifio.edu.br/home/">
-            <img class="logo-rodape"
-            src="logo_unifio.png"
-            alt="Unifio - Centro Universitário das Faculdades Integradas de Ourinhos">
-        </a>
-
-        <p>Centro Universitário das Faculdades Integradas de Ourinhos</p>
-
-    </footer>
-
-</body>
-</html>

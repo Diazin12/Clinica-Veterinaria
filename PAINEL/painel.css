@@ -1,0 +1,261 @@
+body {
+    margin: 0;
+    isolation: isolate;
+    min-height: 100vh; /* O fundo ocupa pelo menos toda a altura da tela */
+    background-color: #eef6ff;
+    background-image: url("fundo_painel.png");
+    background-size: cover; /* Preenche a página sem deformar a imagem */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.all {
+    background-color: #00489C;
+
+    display: flex; /* <= deixa os elementos flexivel */
+    align-items: center; /*<= alinha os elementos verticalmente no centro */
+
+    min-height: 104px;
+    box-sizing: border-box;
+    padding: 20px 42px; /* Espaço interno do cabeçalho ampliado */
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 160px;
+    height: auto;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 18px; /* Espaço entre os links */
+
+    margin-left: auto;
+}
+
+.button {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ent,
+.painel-ativo {
+    font-size: 18px;
+    color: white;
+    background-color:#FF8C00;
+
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+
+    padding: 7px 14px;
+    border-radius: 4px;
+
+    margin-left: 8px;
+    white-space: nowrap;
+}
+
+.painel-ativo {
+    margin-left: 0; /* O botão Painel fica no menu, sem o recuo do Sair */
+}
+
+main {
+    padding: 28px 42px 80px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.rodape {
+    display: none; /* O logo Unifio já aparece no fundo da página */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.titulo-painel {
+    display: flex; /* Ícone e textos lado a lado */
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 22px;
+    color: #00489C;
+}
+
+.icone-painel {
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+}
+
+.icone-painel svg {
+    width: 100%;
+    height: 100%;
+}
+
+.titulo-painel h1 {
+    margin: 0;
+    font-size: 34px;
+    line-height: 1.2;
+}
+
+.titulo-painel p {
+    margin: 6px 0 0;
+    font-size: 16px;
+    color: #5a6b80;
+}
+
+.quadro {
+    background-color: white;   /* Fundo branco */
+    border: 2px solid #B6CDEE;  /* Borda azul-clara */
+    border-radius: 16px;       /* Arredonda os cantos */
+    padding: 22px;             /* Espaço entre a borda e o conteúdo */
+    box-shadow: 0 8px 20px #0001;
+}
+
+.abas {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.abas a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 10px;
+    background-color: #eef3f8;
+    color: #4b5d73;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.abas a.aba-ativa {
+    background-color: #00489C;
+    color: white;
+}
+
+.abas svg {
+    width: 18px;
+    height: 18px;
+}
+
+.topo-tabela {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.topo-tabela h2 {
+    margin: 0;
+    color: #00489C;
+    font-size: 22px;
+}
+
+.topo-tabela input[type="date"] {
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid #c5d4e8;
+    font-family: inherit;
+    color: #334155;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    font-size: 14px;
+    color: #64748b;
+    font-weight: 600;
+    padding: 12px 10px;
+    border-bottom: 1px solid #e6eef6;
+}
+
+td {
+    padding: 14px 10px;
+    border-bottom: 1px solid #eef3f8;
+    color: #334155;
+    font-size: 15px;
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+.status {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.status-agendado {
+    color: #ca8a04;
+}
+
+.status-confirmado {
+    color: #16a34a;
+}
+
+.status-concluido {
+    color: #64748b;
+}
+
+.status-cancelado {
+    color: #dc2626;
+}
+
+td form {
+    display: flex;
+    gap: 8px;
+    margin: 0;
+}
+
+.btn-confirmar,
+.btn-cancelar,
+.btn-status {
+    border: none;
+    border-radius: 8px;
+    padding: 7px 12px;
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn-confirmar {
+    background-color: #22c55e;
+}
+
+.btn-cancelar {
+    background-color: #ef4444;
+}
+
+.btn-status.confirmado {
+    background-color: #22c55e;
+}
+
+.btn-status.concluido,
+.btn-status.cancelado {
+    background-color: #94a3b8;
+}
+
+.btn-confirmar:disabled,
+.btn-cancelar:disabled,
+.btn-status:disabled {
+    cursor: default;
+    opacity: 0.85;
+}
+
+.btn-cancelar:disabled {
+    background-color: #94a3b8;
+}

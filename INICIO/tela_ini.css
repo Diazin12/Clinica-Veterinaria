@@ -190,3 +190,21 @@ body {
 }
 
 .info .agendar-link{display:inline-block;border-radius:14px;font-size:18.67px;line-height:1.2;background:#ff8c00;color:white;text-decoration:none;padding:11.2px 28px}
+
+main {
+    padding: 24px 42px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.rodape {
+    background-color: #00489C;
+    color: white;
+    text-align: center;
+    padding: 24px 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo-rodape {
+    width: 220px;
+    height: auto;
+}

@@ -46,11 +46,11 @@ if (file_exists($arquivo)) {
             <!-- Menu -->
             <nav class="menu">
 
-                <a href="tela_inicial.html" class="button">
+                <a href="../INICIO/tela_inicial.html" class="button">
                     Inicio
                 </a>
 
-                <a href="#" class="button">
+                <a href="../INICIO/tela_inicial.html#servicos" class="button">
                     Serviços
                 </a>
 
@@ -69,8 +69,8 @@ if (file_exists($arquivo)) {
 
                 <h1>Agendar Consulta</h1>
 
-                <form class="agendamento"
-                action="processa_pet.php" method="POST">
+                <form id="agendamento" class="agendamento"
+                action="../agendar.php" method="POST">
 
                     <label for="pet">Pet</label><br>
                     <select id="pet" name="pet" required>
@@ -82,30 +82,40 @@ if (file_exists($arquivo)) {
                     <?php endforeach; ?>
                     </select>
                     <br><br>
+
+                    <label for="tutor">Tutor</label><br>
+                    <input type="text" id="tutor" name="tutor" required>
+                    <br><br>
                     
-                    <label>Serviço</label> <br>
-                    <select>
-                        <option>Selecione o serviço</option>
-                        <option>Consulta</option>
-                        <option>Vacinação</option>
-                        <option>Exames</option>
+                    <label for="servico">Serviço</label> <br>
+                    <select id="servico" name="servico" required>
+                        <option value="">Selecione o serviço</option>
+                        <option value="Consulta">Consulta</option>
+                        <option value="Vacinação">Vacinação</option>
+                        <option value="Exame">Exame</option>
                     </select>
                     <br><br>
 
-                    <label>Data</label><br>
-                    <input type="date">
+                    <label for="data">Data</label><br>
+                    <input type="date" id="data" name="data" required>
                     <br><br>
 
-                    <label>Horário</label><br>
-                    <select>
-                        <option>Selecione um horário</option>
-                        <option>08:00</option>
-                        <option>09:00</option>
-                        <option>10:00</option>
+                    <label for="hora">Horário</label><br>
+                    <select id="hora" name="hora" required>
+                        <option value="">Selecione um horário</option>
+                        <option value="08:00">08:00</option>
+                        <option value="09:00">09:00</option>
+                        <option value="10:00">10:00</option>
+                        <option value="11:00">11:00</option>
+                        <option value="13:00">13:00</option>
+                        <option value="14:00">14:00</option>
+                        <option value="15:00">15:00</option>
+                        <option value="16:00">16:00</option>
+                        <option value="17:00">17:00</option>
                     </select>
                     <br><br>
 
-                    <button type="button" class = "button1">
+                    <button type="submit" class="button1">
                         Verificar disponibilidade
                     </button>
 
@@ -148,8 +158,6 @@ if (file_exists($arquivo)) {
             </section>
 
         </div>
-
-    </main>
 
 </body>
 </html>

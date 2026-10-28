@@ -1,21 +1,23 @@
 <?php
-require_once 'includes/cabecalho.php';
 require_once 'dados/consultas.php';
+require_once 'includes/cabecalho.php';
 
-$hoje        = "2026-10-15";      // data simulada
-$veterinario = "Dra.Brinquedos";  // única veterinária da clínica
+$hoje        = date('Y-m-d');
+$veterinario = "Dra.Brinquedos";
 
-// Os nomes dentro de $_POST[""] precisam ser iguais aos name dos inputs do formulário
-$pet     = htmlspecialchars($_POST["pet"] ?? "");
-$tutor   = htmlspecialchars($_POST["tutor"] ?? "");
-$servico = htmlspecialchars($_POST["servico"] ?? "");
-$data    = htmlspecialchars($_POST["data"] ?? "");
-$hora    = htmlspecialchars($_POST["hora"] ?? "");
-$status  = "agendado"; // todo agendamento novo começa como agendado
+$pet     = trim((string) ($_POST["pet"] ?? ""));
+$tutor   = trim((string) ($_POST["tutor"] ?? ""));
+$servico = trim((string) ($_POST["servico"] ?? ""));
+$data    = trim((string) ($_POST["data"] ?? ""));
+$hora    = trim((string) ($_POST["hora"] ?? ""));
+$status  = "agendado";
 
 $erro = "";
+$sucesso = "";
 
-if ($pet === "" || $tutor === "" || $servico === "" || $data === "" || $hora === "") {
+if ($_SERVER["REQUEST_METHOD"] !== "POST") {
+    $erro = "Preencha o formulário de agendamento.";
+} elseif ($pet === "" || $tutor === "" || $servico === "" || $data === "" || $hora === "") {
     $erro = "Preencha todos os campos.";
 } elseif ($data < $hoje) {
     $erro = "A data não pode estar no passado.";
@@ -29,12 +31,34 @@ if ($pet === "" || $tutor === "" || $servico === "" || $data === "" || $hora ===
         }
     }
 }
+
+if ($erro === "") {
+    $proximoId = (count($consultas) ? max(array_column($consultas, "id")) : 0) + 1;
+    $consultas[] = [
+        "id" => $proximoId,
+        "pet" => $pet,
+        "tutor" => $tutor,
+        "servico" => $servico,
+        "veterinario" => $veterinario,
+        "data" => $data,
+        "hora" => $hora,
+        "status" => $status,
+    ];
+    $sucesso = "Agendamento realizado com sucesso.";
+}
+
+$mostrar = static function (string $valor): string {
+    return htmlspecialchars($valor, ENT_QUOTES, "UTF-8");
+};
 ?>
 
 <?php if ($erro !== ""): ?>
-    <p style="color:red;"><?= $erro ?></p>
+    <p style="color:red;"><?= $mostrar($erro) ?></p>
+    <p><a href="AGENDAMENTO/agendamento.php">Voltar ao agendamento</a></p>
 <?php else: ?>
-    <p><?= $hora ?> <?= $tutor ?> <?= $pet ?> <?= $servico ?> <?= $status ?></p>
+    <p><?= $mostrar($sucesso) ?></p>
+    <p><?= $mostrar($hora) ?> — <?= $mostrar($tutor) ?> — <?= $mostrar($pet) ?> — <?= $mostrar($servico) ?></p>
+    <p><a href="PAINEL/painel.php">Ver no painel</a></p>
 <?php endif; ?>
 
 <?php require_once 'includes/rodape.php'; ?>
